@@ -1,19 +1,14 @@
-import type { Config } from "tailwindcss";
+import { type Config } from 'tailwindcss'
+import { preset } from './src/lib/tailwind/preset'
 
-const config: Config = {
+const config = {
+  presets: [preset],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
-  },
-  plugins: [],
-};
-export default config;
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}'
+  ]
+} satisfies Config
+
+export default config
